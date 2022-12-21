@@ -1,0 +1,93 @@
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+// import Question from "./Questions/Question";
+// import { questions, answers } from "./data";
+
+const App = () => {
+  const style = {
+    border: "4px solid white",
+    textAlign: "center",
+    padding: "10px 50px",
+  };
+  // let randomNumber = Math.floor(Math.random() * 3);
+  // console.log(randomNumber);
+  const content = [
+    {
+      id: 1,
+      question: "What is my name 1",
+      answer: "My name is hamnaraeel 1",
+    },
+    {
+      id: 2,
+      question: "What do i do? 2",
+      answer: "coding 2",
+    },
+    {
+      id: 3,
+      question: "What i AM DOING RN? 3",
+      answer: " MAKING REACT APP 3",
+    },
+    {
+      id: 4,
+      question: "My quealification? 4",
+      answer: "BS 4",
+    },
+  ];
+
+  const [question, setQuestion] = useState(
+    (content.id = [Math.floor(Math.random() * 3)])
+  );
+
+  const getAnswer = (rn) => {
+    // if (question === content[randomNumber].answer) {
+    //   setQuestion(content[randomNumber].question);
+    // } else {
+    //   setQuestion(content[randomNumber].answer);
+    // }
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>30 days of React</h1>
+        <h2>Day One: Question & Answer</h2>
+
+        {/* <Question question={question} click={revealAnswerHandler()} /> */}
+
+        <div onClick={() => getAnswer()} style={style}>
+          <p>{question}</p>
+        </div>
+      </header>
+    </div>
+  );
+};
+
+// class App extends Component {
+//   state = {
+//     question: "What's the world's deepest lake?",
+//     answer: "Lake Baikal, in Russian Siberia.",
+//   };
+//   revealAnswerHandler = (e) => {
+//     this.setState({ question: this.state.answer });
+//   };
+//   render() {
+//     return (
+//       <div className="App">
+//         <header className="App-header">
+//           <img src={logo} className="App-logo" alt="logo" />
+//           <h1>30 days of React</h1>
+//           <h2>Day One: Question & Answer</h2>
+
+//           <Question
+//             question={this.state.question}
+//             click={this.revealAnswerHandler}
+//           />
+//         </header>
+//       </div>
+//     );
+//   }
+// }
+
+export default App;
